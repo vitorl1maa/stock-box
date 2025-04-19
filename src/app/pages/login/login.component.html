@@ -1,1 +1,88 @@
-<p>login works!!!!</p>
+<section>
+  <div class="login-content">
+    <div class="title-section">
+      <h1>Bem-vindo de volta!</h1>
+      <p>Faça login para acessar sua conta</p>
+    </div>
+
+    <div class="login-form-content">
+      <div class="social-login">
+        <app-button
+          [iconSrc]="googleIcon"
+          [type]="'outline'"
+          [label]="'Entrar com o Google'"
+          [size]="'md'"
+        ></app-button>
+        <app-button
+          [iconSrc]="facebookIcon"
+          [type]="'outline'"
+          [label]="'Entrar com o Facebook'"
+          [size]="'md'"
+        ></app-button>
+      </div>
+
+      <div class="divisor">
+        <span></span>
+        <p>ou</p>
+        <span></span>
+      </div>
+
+      <form>
+        <div class="input-group">
+          <label>E-mail</label>
+          <app-input [placeholder]="'Digite seu @email'"></app-input>
+        </div>
+
+        <div class="input-group">
+          <label>Senha</label>
+          <div class="pass-group">
+            <app-input [placeholder]="'Senha'" [icon]="'eye-off'"></app-input>
+
+            <span class="icon-content">
+              <app-icon
+                class="icon"
+                [icon]="'eye'"
+                [size]="'sm'"
+                [color]="'primary'"
+              ></app-icon>
+            </span>
+          </div>
+        </div>
+
+        <div class="password-control">
+          <div class="accept-terms-link">
+            <app-checkbox name="terms" [(ngModel)]="isChecked"></app-checkbox>
+            <label>Aceitar <a href="#">Termos e Privacidade</a> </label>
+          </div>
+
+          <div>
+            <a href="#">Esqueceu a senha ?</a>
+          </div>
+        </div>
+
+        <div class="login-group">
+          <app-button [label]="'Entrar'"></app-button>
+
+          <p>Ainda não possui uma conta ? <span>Criar</span></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="wrapper-apresentation">
+    <div class="apresentation-content">
+      <h1>
+        Simplificando o gerenciamento <br />
+        do seu estoque
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti iste,
+        omnis amet, repellat laboriosam asperiores.
+      </p>
+
+      <div class="animated-container">
+        <div #svgContainer class="svg-container"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,70 @@
+@import "variables";
+@import "spacing";
+@import "theme";
+@import "fontSize";
+
+input {
+  width: 100%;
+  font-size: 16px;
+  border-radius: $border-radius;
+  transition: $transition;
+  box-sizing: border-box;
+  outline: none;
+  caret-color: $primary-color;
+
+  &::placeholder {
+    color: #ccc;
+  }
+
+  &.text {
+    border: 3px solid $off-color;
+    background-color: transparent;
+    color: $black;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  &.currency {
+    border: 3px solid $off-color;
+    background-color: transparent;
+    color: $black;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  &.sm {
+    padding: $spacing-sm $spacing-sm;
+    @include font-size("sm");
+  }
+
+  &.md {
+    padding: $spacing-md $spacing-md;
+    @include font-size("md");
+  }
+
+  &.lg {
+    padding: $spacing-lg $spacing-lg;
+    @include font-size("lg");
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    padding-right: 2rem;
+  }
+
+  .input-icon {
+    position: absolute;
+    right: 0.75rem;
+    pointer-events: none;
+  }
+}

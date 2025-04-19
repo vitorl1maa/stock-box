@@ -1,0 +1,60 @@
+@import "variables";
+@import "spacing";
+@import "theme";
+@import "fontSize";
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &.sm {
+    padding: $spacing-sm $spacing-sm;
+    @include font-size("sm");
+  }
+
+  &.md {
+    padding: $spacing-md $spacing-md;
+    @include font-size("md");
+  }
+
+  &.lg {
+    padding: $spacing-lg $spacing-giant;
+    @include font-size("lg");
+  }
+
+  &.default {
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 2px solid $off-color;
+    color: $black;
+  }
+
+  &.disabled {
+    background-color: $off-color;
+    color: $white;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &:not(.disabled):hover {
+    filter: brightness(0.9);
+    border-color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}

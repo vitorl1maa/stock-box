@@ -1,3 +1,15 @@
-<button [ngClass]="[type, size]" [disabled]="disabled">
-    {{label}}
+<button
+  [ngClass]="[type, size, disabled ? 'disabled' : '']"
+  [disabled]="disabled"
+  class="btn"
+>
+  <ng-container *ngIf="iconSrc">
+    <img [src]="iconSrc" alt="Ícone" class="icon" />
+  </ng-container>
+
+  <ng-container *ngIf="iconTemplate">
+    <ng-container *ngTemplateOutlet="iconTemplate"></ng-container>
+  </ng-container>
+
+  {{ label }}
 </button>

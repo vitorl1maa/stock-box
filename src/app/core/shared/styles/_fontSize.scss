@@ -1,0 +1,23 @@
+$font-size-xsm: 12px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-lg: 25px;
+$font-size-xlg: 32px;
+$font-size-xxlg: 35px;
+$font-size-huge: 45px;
+$font-size-giant: 50px;
+
+@mixin font-size($size) {
+  font-size: map-get($font-size-map, $size);
+}
+
+$font-size-map: (
+  "xsm": $font-size-xsm,
+  "sm": $font-size-sm,
+  "md": $font-size-md,
+  "lg": $font-size-lg,
+  "xlg": $font-size-xlg,
+  "xxlg": $font-size-xxlg,
+  "huge": $font-size-huge,
+  "giant": $font-size-giant,
+);

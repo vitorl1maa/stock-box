@@ -1,14 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
   @Input() label: string = 'Button';
-  @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() type: 'default' | 'outline' | 'disabled' = 'default';
+  @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() disabled: boolean = false;
+  @Input() iconSrc?: string;
+  @Input() iconTemplate?: TemplateRef<any>;
 }

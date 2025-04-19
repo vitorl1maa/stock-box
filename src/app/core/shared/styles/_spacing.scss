@@ -1,0 +1,16 @@
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-giant: 6rem;
+
+@mixin spacing($size) {
+  margin: map-get($spacing-map, $size);
+  padding: map-get($spacing-map, $size);
+}
+
+$spacing-map: (
+  "sm": $spacing-sm,
+  "md": $spacing-md,
+  "lg": $spacing-lg,
+  "giant": $spacing-giant,
+);
