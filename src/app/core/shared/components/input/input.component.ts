@@ -11,7 +11,7 @@ export class InputComponent {
   @Input() placeholder: string = "Digite aqui...";
   @Input() class: string = "";
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
-  @Input() type: 'text' | 'email' | 'currency' = 'text';
+  @Input() type: 'text' | 'email' | 'currency' | 'password' = 'text';
   @Input() disabled: boolean = false;
   @Input() icon?: string;
   @Input() value: string = '';

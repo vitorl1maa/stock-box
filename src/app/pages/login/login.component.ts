@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: false,
@@ -13,8 +14,13 @@ export class LoginComponent {
   googleIcon = "../../../assets/images/login/logos--google-icon.svg";
   facebookIcon = "../../../assets/images/login/logos--facebook.svg";
   isChecked = false;
+  hidePassword: boolean = true;
 
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
+  constructor(
+    private http: HttpClient,
+    private sanitizer: DomSanitizer,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.loadSvgInline('../../../assets/images/login/apresentation.svg');
@@ -28,6 +34,14 @@ export class LoginComponent {
       const svgElement = this.svgContainer.nativeElement.querySelector('svg');
       svgElement?.classList.add('animated');
     });
+  }
+
+  tooglePassword() {
+    this.hidePassword = !this.hidePassword
+  }
+
+  onSignIn() {
+    this.router.navigate(['/home'])
   }
 }
 

@@ -1,5 +1,8 @@
 <section>
   <div class="login-content">
+    <span class="logo-content">
+      <img src="../../../assets/images/login/logo-stock-box.png" alt="Logo" />
+    </span>
     <div class="title-section">
       <h1>Bem-vindo de volta!</h1>
       <p>Faça login para acessar sua conta</p>
@@ -30,18 +33,25 @@
       <form>
         <div class="input-group">
           <label>E-mail</label>
-          <app-input [placeholder]="'Digite seu @email'"></app-input>
+          <app-input
+            [placeholder]="'Digite seu @email'"
+            [type]="'email'"
+          ></app-input>
         </div>
 
         <div class="input-group">
           <label>Senha</label>
           <div class="pass-group">
-            <app-input [placeholder]="'Senha'" [icon]="'eye-off'"></app-input>
+            <app-input
+              [type]="hidePassword ? 'password' : 'text'"
+              [placeholder]="'Senha'"
+              [icon]="'eye-off'"
+            ></app-input>
 
-            <span class="icon-content">
+            <span class="icon-content" (click)="tooglePassword()">
               <app-icon
                 class="icon"
-                [icon]="'eye'"
+                [icon]="hidePassword ? 'eye' : 'eye-off'"
                 [size]="'sm'"
                 [color]="'primary'"
               ></app-icon>
@@ -61,7 +71,7 @@
         </div>
 
         <div class="login-group">
-          <app-button [label]="'Entrar'"></app-button>
+          <app-button (click)="onSignIn()" [label]="'Entrar'"></app-button>
 
           <p>Ainda não possui uma conta ? <span>Criar</span></p>
         </div>
@@ -76,8 +86,8 @@
         do seu estoque
       </h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti iste,
-        omnis amet, repellat laboriosam asperiores.
+        Cuidar do estoque não precisa ser um desafio. A gente te ajuda a manter
+        tudo no lugar, com facilidade.
       </p>
 
       <div class="animated-container">

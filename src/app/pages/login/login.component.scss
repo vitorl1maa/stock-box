@@ -16,6 +16,13 @@ section {
     display: flex;
     flex-direction: column;
 
+    .logo-content {
+      margin-bottom: 1rem;
+      > img {
+        width: 10%;
+      }
+    }
+
     .title-section {
       h1 {
         font-size: $font-size-xlg;
@@ -71,7 +78,7 @@ section {
       padding: $spacing-giant;
 
       h1 {
-        font-size: $font-size-xlg;
+        font-size: $font-size-huge;
         font-weight: normal;
         color: $white;
       }
@@ -94,7 +101,7 @@ section {
     gap: 2rem;
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+    margin-top: 4rem;
 
     .input-group {
       display: flex;
@@ -145,6 +152,7 @@ section {
       position: absolute;
       right: 20px;
       top: 18px;
+      cursor: pointer;
     }
   }
 }

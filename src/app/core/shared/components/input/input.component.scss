@@ -16,7 +16,9 @@ input {
     color: #ccc;
   }
 
-  &.text {
+  &.text,
+  &.password,
+  &.email {
     border: 3px solid $off-color;
     background-color: transparent;
     color: $black;
