@@ -1,1 +1,109 @@
-<p>register works!</p>
+<section>
+  <div class="register-content">
+    <div>
+      <span class="logo-content">
+        <img src="../../../assets/images/login/logo-stock-box.png" alt="Logo" />
+      </span>
+      <div class="title-section">
+        <h1>Criar conta</h1>
+        <p>Crie sua conta</p>
+      </div>
+    </div>
+
+    <div>
+      <form>
+        <div class="name-group">
+          <div class="input-group">
+            <label>Nome</label>
+            <app-input
+              [placeholder]="'Digite seu nome'"
+              [type]="'text'"
+            ></app-input>
+          </div>
+
+          <div class="input-group">
+            <label>Sobrenome</label>
+            <app-input
+              [placeholder]="'Digite seu sobrenome'"
+              [type]="'text'"
+            ></app-input>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>E-mail</label>
+          <app-input
+            [placeholder]="'Digite seu @email'"
+            [type]="'email'"
+          ></app-input>
+        </div>
+
+        <div class="input-group">
+          <label>Senha</label>
+          <div class="pass-group">
+            <app-input
+              [type]="hidePassword ? 'password' : 'text'"
+              [placeholder]="'Senha'"
+              [icon]="'eye-off'"
+            ></app-input>
+
+            <span class="icon-content" (click)="tooglePassword()">
+              <app-icon
+                class="icon"
+                [icon]="hidePassword ? 'eye' : 'eye-off'"
+                [size]="'sm'"
+                [color]="'primary'"
+              ></app-icon>
+            </span>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>Confirmar senha</label>
+          <div class="pass-group">
+            <app-input
+              [type]="hideConfirmPassword ? 'password' : 'text'"
+              [placeholder]="'Confirmar senha'"
+              [icon]="'eye-off'"
+            ></app-input>
+
+            <span class="icon-content" (click)="toogleConfirmPassword()">
+              <app-icon
+                class="icon"
+                [icon]="hideConfirmPassword ? 'eye' : 'eye-off'"
+                [size]="'sm'"
+                [color]="'primary'"
+              ></app-icon>
+            </span>
+          </div>
+        </div>
+
+        <div class="register-group">
+          <app-button [label]="'Criar conta'"></app-button>
+          <app-button
+            (click)="backHome()"
+            [label]="'Cancelar'"
+            [type]="'outline'"
+          ></app-button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="wrapper-apresentation">
+    <div class="apresentation-content">
+      <h1>
+        Simplificando o gerenciamento <br />
+        do seu estoque
+      </h1>
+      <p>
+        Cuidar do estoque não precisa ser um desafio. A gente te ajuda a manter
+        tudo no lugar, com facilidade.
+      </p>
+
+      <div class="animated-container">
+        <div #svgContainer class="svg-container"></div>
+      </div>
+    </div>
+  </div>
+</section>
