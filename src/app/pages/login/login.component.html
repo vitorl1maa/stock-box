@@ -15,12 +15,14 @@
           [type]="'outline'"
           [label]="'Entrar com o Google'"
           [size]="'md'"
+          class="google-button"
         ></app-button>
         <app-button
           [iconSrc]="facebookIcon"
           [type]="'outline'"
           [label]="'Entrar com o Facebook'"
           [size]="'md'"
+          class="facebook-button"
         ></app-button>
       </div>
 
@@ -73,7 +75,10 @@
         <div class="login-group">
           <app-button (click)="onSignIn()" [label]="'Entrar'"></app-button>
 
-          <p>Ainda não possui uma conta ? <span>Criar</span></p>
+          <p>
+            Ainda não possui uma conta ?
+            <span (click)="onRegister()">Criar</span>
+          </p>
         </div>
       </form>
     </div>
