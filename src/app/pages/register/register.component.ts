@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { UserService } from '../../core/services/api/auth/users.service';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private sanitizer: DomSanitizer,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -44,7 +46,7 @@ export class RegisterComponent implements OnInit {
     this.hideConfirmPassword = !this.hideConfirmPassword
   }
 
-  backHome() {
+  backLogin() {
     this.router.navigate(['/'])
   }
 

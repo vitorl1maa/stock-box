@@ -38,50 +38,70 @@
           ></app-input>
         </div>
 
-        <div class="input-group">
-          <label>Senha</label>
-          <div class="pass-group">
+        <div class="name-group">
+          <div class="input-group">
+            <label>CPF</label>
             <app-input
-              [type]="hidePassword ? 'password' : 'text'"
-              [placeholder]="'Senha'"
-              [icon]="'eye-off'"
+              [placeholder]="'Digite seu cpf'"
+              [type]="'text'"
             ></app-input>
+          </div>
 
-            <span class="icon-content" (click)="tooglePassword()">
-              <app-icon
-                class="icon"
-                [icon]="hidePassword ? 'eye' : 'eye-off'"
-                [size]="'sm'"
-                [color]="'primary'"
-              ></app-icon>
-            </span>
+          <div class="input-group">
+            <label>Celular</label>
+            <app-input
+              [placeholder]="'Digite seu telefone'"
+              [type]="'text'"
+            ></app-input>
           </div>
         </div>
 
-        <div class="input-group">
-          <label>Confirmar senha</label>
-          <div class="pass-group">
-            <app-input
-              [type]="hideConfirmPassword ? 'password' : 'text'"
-              [placeholder]="'Confirmar senha'"
-              [icon]="'eye-off'"
-            ></app-input>
+        <div class="name-group">
+          <div class="input-group">
+            <label>Senha</label>
+            <div class="pass-group">
+              <app-input
+                [type]="hidePassword ? 'password' : 'text'"
+                [placeholder]="'Senha'"
+                [icon]="'eye-off'"
+              ></app-input>
 
-            <span class="icon-content" (click)="toogleConfirmPassword()">
-              <app-icon
-                class="icon"
-                [icon]="hideConfirmPassword ? 'eye' : 'eye-off'"
-                [size]="'sm'"
-                [color]="'primary'"
-              ></app-icon>
-            </span>
+              <span class="icon-content" (click)="tooglePassword()">
+                <app-icon
+                  class="icon"
+                  [icon]="hidePassword ? 'eye' : 'eye-off'"
+                  [size]="'sm'"
+                  [color]="'primary'"
+                ></app-icon>
+              </span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Confirmar senha</label>
+            <div class="pass-group">
+              <app-input
+                [type]="hideConfirmPassword ? 'password' : 'text'"
+                [placeholder]="'Confirmar senha'"
+                [icon]="'eye-off'"
+              ></app-input>
+
+              <span class="icon-content" (click)="toogleConfirmPassword()">
+                <app-icon
+                  class="icon"
+                  [icon]="hideConfirmPassword ? 'eye' : 'eye-off'"
+                  [size]="'sm'"
+                  [color]="'primary'"
+                ></app-icon>
+              </span>
+            </div>
           </div>
         </div>
 
         <div class="register-group">
           <app-button [label]="'Criar conta'"></app-button>
           <app-button
-            (click)="backHome()"
+            (click)="backLogin()"
             [label]="'Cancelar'"
             [type]="'outline'"
           ></app-button>
