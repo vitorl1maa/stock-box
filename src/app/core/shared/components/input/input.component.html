@@ -1,8 +1,10 @@
 <input
-  value=""
+  [value]="value"
   [placeholder]="placeholder"
   [disabled]="disabled"
   [ngClass]="[type, size]"
   [class]="class"
   [type]="type"
+  (input)="onInputChange($event)"
+  (blur)="markAsTouched()"
 />

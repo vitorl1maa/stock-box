@@ -6,6 +6,7 @@ import { ButtonComponent } from "../../core/shared/components/button/button.comp
 import { CheckboxComponent } from "../../core/shared/components/checkbox/checkbox.component";
 import { IconComponent } from "../../core/shared/components/icon/icon.component";
 import { InputComponent } from "../../core/shared/components/input/input.component";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { InputComponent } from "../../core/shared/components/input/input.compone
         ButtonComponent,
         CheckboxComponent,
         IconComponent,
-        InputComponent
+        InputComponent,
+        ReactiveFormsModule
     ]
 })
 export class RegisterModule { }

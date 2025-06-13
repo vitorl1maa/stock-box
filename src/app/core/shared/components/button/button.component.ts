@@ -9,7 +9,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() label: string = 'Button';
-  @Input() type: 'default' | 'outline' | 'disabled' = 'default';
+  @Input() style: 'default' | 'outline' | 'disabled' = 'default';
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() disabled: boolean = false;
   @Input() iconSrc?: string;

@@ -11,48 +11,113 @@
     </div>
 
     <div>
-      <form>
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
         <div class="name-group">
           <div class="input-group">
             <label>Nome</label>
             <app-input
+              formControlName="firstName"
               [placeholder]="'Digite seu nome'"
               [type]="'text'"
             ></app-input>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('firstName')?.errors?.['required'] && registerForm.get('firstName')?.touched"
+            >
+              Nome é obrigatório
+            </span>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('firstName')?.errors?.['minlength'] && registerForm.get('firstName')?.touched"
+            >
+              Nome deve ter pelo menos 2 caracteres
+            </span>
           </div>
 
           <div class="input-group">
             <label>Sobrenome</label>
             <app-input
+              formControlName="lastName"
               [placeholder]="'Digite seu sobrenome'"
               [type]="'text'"
             ></app-input>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('lastName')?.errors?.['required'] && registerForm.get('lastName')?.touched"
+            >
+              Sobrenome é obrigatório
+            </span>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('lastName')?.errors?.['minlength'] && registerForm.get('lastName')?.touched"
+            >
+              Sobrenome deve ter pelo menos 2 caracteres
+            </span>
           </div>
         </div>
 
         <div class="input-group">
           <label>E-mail</label>
           <app-input
+            formControlName="email"
             [placeholder]="'Digite seu @email'"
             [type]="'email'"
           ></app-input>
+          <span
+            class="error-message"
+            *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.touched"
+          >
+            E-mail é obrigatório
+          </span>
+          <span
+            class="error-message"
+            *ngIf="registerForm.get('email')?.errors?.['email'] && registerForm.get('email')?.touched"
+          >
+            E-mail inválido
+          </span>
         </div>
 
         <div class="name-group">
           <div class="input-group">
             <label>CPF</label>
             <app-input
+              formControlName="cpf"
               [placeholder]="'Digite seu cpf'"
               [type]="'text'"
             ></app-input>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('cpf')?.errors?.['required'] && registerForm.get('cpf')?.touched"
+            >
+              CPF é obrigatório
+            </span>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('cpf')?.errors?.['minlength'] && registerForm.get('cpf')?.touched"
+            >
+              CPF deve ter 11 dígitos
+            </span>
           </div>
 
           <div class="input-group">
             <label>Celular</label>
             <app-input
+              formControlName="phone"
               [placeholder]="'Digite seu telefone'"
               [type]="'text'"
             ></app-input>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('phone')?.errors?.['required'] && registerForm.get('phone')?.touched"
+            >
+              Telefone é obrigatório
+            </span>
+            <span
+              class="error-message"
+              *ngIf="registerForm.get('phone')?.errors?.['minlength'] && registerForm.get('phone')?.touched"
+            >
+              Telefone deve ter pelo menos 10 dígitos
+            </span>
           </div>
         </div>
 
@@ -61,12 +126,24 @@
             <label>Senha</label>
             <div class="pass-group">
               <app-input
+                formControlName="password"
                 [type]="hidePassword ? 'password' : 'text'"
                 [placeholder]="'Senha'"
                 [icon]="'eye-off'"
               ></app-input>
-
-              <span class="icon-content" (click)="tooglePassword()">
+              <span
+                class="error-message"
+                *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.touched"
+              >
+                Senha é obrigatória
+              </span>
+              <span
+                class="error-message"
+                *ngIf="registerForm.get('password')?.errors?.['minlength'] && registerForm.get('password')?.touched"
+              >
+                Senha deve ter pelo menos 6 caracteres
+              </span>
+              <span class="icon-content" (click)="togglePassword()">
                 <app-icon
                   class="icon"
                   [icon]="hidePassword ? 'eye' : 'eye-off'"
@@ -81,12 +158,24 @@
             <label>Confirmar senha</label>
             <div class="pass-group">
               <app-input
+                formControlName="confirmPassword"
                 [type]="hideConfirmPassword ? 'password' : 'text'"
                 [placeholder]="'Confirmar senha'"
                 [icon]="'eye-off'"
               ></app-input>
-
-              <span class="icon-content" (click)="toogleConfirmPassword()">
+              <span
+                class="error-message"
+                *ngIf="registerForm.get('confirmPassword')?.errors?.['required'] && registerForm.get('confirmPassword')?.touched"
+              >
+                Confirmação de senha é obrigatória
+              </span>
+              <span
+                class="error-message"
+                *ngIf="registerForm.get('confirmPassword')?.errors?.['minlength'] && registerForm.get('confirmPassword')?.touched"
+              >
+                Confirmação de senha deve ter pelo menos 6 caracteres
+              </span>
+              <span class="icon-content" (click)="toggleConfirmPassword()">
                 <app-icon
                   class="icon"
                   [icon]="hideConfirmPassword ? 'eye' : 'eye-off'"
@@ -99,11 +188,11 @@
         </div>
 
         <div class="register-group">
-          <app-button [label]="'Criar conta'"></app-button>
+          <app-button [label]="'Criar conta'" type="submit"></app-button>
           <app-button
             (click)="backLogin()"
             [label]="'Cancelar'"
-            [type]="'outline'"
+            [style]="'outline'"
           ></app-button>
         </div>
       </form>
