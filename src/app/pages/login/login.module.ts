@@ -6,7 +6,8 @@ import { ButtonComponent } from "../../core/shared/components/button/button.comp
 import { InputComponent } from "../../core/shared/components/input/input.component";
 import { IconComponent } from "../../core/shared/components/icon/icon.component";
 import { CheckboxComponent } from "../../core/shared/components/checkbox/checkbox.component";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -17,7 +18,9 @@ import { FormsModule } from '@angular/forms';
     InputComponent,
     IconComponent,
     CheckboxComponent,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class LoginModule { }

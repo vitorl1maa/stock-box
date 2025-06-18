@@ -32,10 +32,11 @@
         <span></span>
       </div>
 
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onSignIn()">
         <div class="input-group">
           <label>E-mail</label>
           <app-input
+            formControlName="email"
             [placeholder]="'Digite seu @email'"
             [type]="'email'"
           ></app-input>
@@ -45,6 +46,7 @@
           <label>Senha</label>
           <div class="pass-group">
             <app-input
+              formControlName="password"
               [type]="hidePassword ? 'password' : 'text'"
               [placeholder]="'Senha'"
               [icon]="'eye-off'"
@@ -63,7 +65,10 @@
 
         <div class="password-control">
           <div class="accept-terms-link">
-            <app-checkbox name="terms" [(ngModel)]="isChecked"></app-checkbox>
+            <app-checkbox
+              name="terms"
+              formControlName="acceptTerms"
+            ></app-checkbox>
             <label>Aceitar <a href="#">Termos e Privacidade</a> </label>
           </div>
 
@@ -72,8 +77,17 @@
           </div>
         </div>
 
+        <!-- Mensagem de erro -->
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
         <div class="login-group">
-          <app-button (click)="onSignIn()" [label]="'Entrar'"></app-button>
+          <app-button
+            type="submit"
+            [label]="isLoading ? 'Entrando...' : 'Entrar'"
+            [disabled]="isLoading"
+          ></app-button>
 
           <p>
             Ainda não possui uma conta ?
